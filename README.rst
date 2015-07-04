@@ -35,4 +35,4 @@ level read/write operations.
 Dependencies
 ============
 
-    - pybot.core
+- pybot.core
