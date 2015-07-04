@@ -19,11 +19,20 @@ documentation](https://www.python.org/dev/peps/pep-0382/) for details.
 Package content
 ===============
 
-General interest modules which are used by other packages of the collection.
+This packages provides helpers for dealing with I2C, and especially in the Raspberry Pi
+context. 
 
-At the time of writing, you'll find here :
- 
-  - helpers for command line parsers creation, proposing common options sur as debug mode
-    activation, logging level setting,...
-  - logging helpers, based on Python's logging module
-  - helpers for dealing with simple configuration files
+This is achieved by defining and abstraction of the I2C bus wrapping the low level interface provided
+by the target system. This allow accommodating to the various contexts, such as I2C being made available
+via the `SMBus` class on the RasPi. 
+
+In addition, a mock-up implementation is proposed as a fall-back instance for being able to run tests outside of the real 
+target environment, using it for simulating real data traffic.
+
+A thread-safe wrapper of SMBus is also available (`MTSMBus`), using serialized calls to the low
+level read/write operations.
+
+Dependencies
+============
+
+    - pybot.core
