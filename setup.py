@@ -6,6 +6,7 @@ from setuptools import setup, find_packages
 import textwrap
 
 setup(name='pybot_i2c',
+      namespace_packages=['pybot'],
       version='1.0',
       description='I2C/SMBus interface',
       license='LGPL',
